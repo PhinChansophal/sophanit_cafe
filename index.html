@@ -1402,6 +1402,14 @@
         }
 
         function openBrandModal() {
+            const enteredPassword = window.prompt("Enter edit password");
+            if (enteredPassword === null || enteredPassword.trim() !== EDIT_PASSWORD) {
+                if (enteredPassword !== null) {
+                    window.alert("Incorrect password");
+                }
+                return;
+            }
+
             applyBrandData(loadBrandData());
             brandModal.classList.add("open");
         }
